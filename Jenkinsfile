@@ -1,9 +1,10 @@
-                                                                                                                                  pipeline {
+pipeline {
     agent any  // Use any available agent
 
     tools {
-        maven 'Maven'  // Ensure this matches the name configured in Jenkins
+        maven 'VishwasMaven'  //
     }
+
     stages {
         stage('Checkout') {
             steps {
@@ -23,17 +24,12 @@
             }
         }
 
-        
-        
-       
         stage('Run Application') {
             steps {
-                // Start the JAR application
+                // Start the JAR application (adjust JAR name if necessary)
                 sh 'java -jar target/MyMavenApp-1.0-SNAPSHOT.jar'
             }
         }
-
-        
     }
 
     post {
